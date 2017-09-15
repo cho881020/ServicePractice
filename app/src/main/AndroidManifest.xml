@@ -26,6 +26,12 @@
 
         <service android:name=".CountService2">
             <intent-filter>
+                <action android:name="kr.co.tjeit.servicepractice.CountService2" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".MusicService">
+            <intent-filter>
                 <action android:name="kr.co.tjeit.servicepractice.MusicService" />
             </intent-filter>
         </service>

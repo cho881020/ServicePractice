@@ -29,11 +29,33 @@ public class MusicService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
+        super.onStartCommand(intent, flags, startId);
+
+//        재생기가 존재하고, 동시에 아직 재생중이 아니라면.
+        if (player != null && !player.isPlaying()) {
+//            음악을 재생한다.
+            player.start();
+        }
+
+        return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
+
+//        재생기가 있을 경우에만 추가질문
+        if (player != null) {
+//            플레이어가 재생중이라면
+            if (player.isPlaying()) {
+//                정지
+                player.stop();
+            }
+
+//            재생기를 메모리에서 제거
+            player.release();
+
+        }
+
         super.onDestroy();
     }
 

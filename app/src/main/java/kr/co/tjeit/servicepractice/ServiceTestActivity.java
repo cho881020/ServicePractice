@@ -38,6 +38,10 @@ public class ServiceTestActivity extends AppCompatActivity {
 //                Intent intent = new Intent("kr.co.tjeit.servicepractice.CountService2");
 //                startService(intent);
 
+                Intent intent = new Intent("kr.co.tjeit.servicepractice.MusicService");
+                intent.setPackage("kr.co.tjeit.servicepractice");
+                startService(intent);
+
             }
         });
 
@@ -53,6 +57,11 @@ public class ServiceTestActivity extends AppCompatActivity {
 
 //                Intent intent = new Intent("kr.co.tjeit.servicepractice.CountService2");
 //                stopService(intent);
+
+
+                Intent intent = new Intent("kr.co.tjeit.servicepractice.MusicService");
+                intent.setPackage("kr.co.tjeit.servicepractice");
+                stopService(intent);
 
             }
         });
